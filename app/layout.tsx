@@ -27,8 +27,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`dark ${spaceGrotesk.variable} ${syncopate.variable}`}>
-      <body className="antialiased relative min-h-screen">
+    <html lang="en" className={`dark ${spaceGrotesk.variable} ${syncopate.variable}`} suppressHydrationWarning>
+      <body className="antialiased relative min-h-screen" suppressHydrationWarning>
         {/* Z=0: Three.js Canvas container will go here (via a global provider/wrapper or fixed div) */}
         <div id="canvas-container" className="fixed inset-0 z-0 pointer-events-none" />
 

@@ -1,59 +1,38 @@
-# Quantum Identity Portfolio
+# Quantum Identity - Portfolio Modification Guide
 
-A modern, highly interactive, and visually stunning personal developer portfolio built with cutting-edge web technologies. This portfolio features 3D elements, smooth animations, and a sleek, fast user interface.
+This is your master guide for modifying the "Quantum Identity" portfolio.
 
-## 🚀 Technologies Used
+## 1. How to Upload Your Profile Picture
+Currently, the portfolio shows a fallback "KM" logo. To add your real photo:
+1. Find a square, professional photo of yourself (e.g., from your LinkedIn).
+2. Rename the picture file to exactly **`profile.jpg`**
+3. Drag and drop your **`profile.jpg`** file into the `public/images/` folder in this project.
+*(If you use a `.png`, you will just need to open `components/HeroSection.tsx` and `components/AboutSection.tsx` and change `src="/images/profile.jpg"` to `src="/images/profile.png"`).*
 
-- **Framework:** [Next.js](https://nextjs.org/) (React Framework)
-- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
-- **3D Graphics & Animations:** [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/) & [Three.js](https://threejs.org/)
-- **UI Components:** [Radix UI](https://www.radix-ui.com/)
-- **Interactive Animations:** [Framer Motion](https://www.framer.com/motion/)
-- **Icons:** [Lucide React](https://lucide.dev/)
+---
 
-## 🛠️ Getting Started
+## 2. Your "Modification Prompt"
+If you ever want an AI (like Gemini, ChatGPT, Claude) to add new projects, change colors, or update your experience without messing up the 3D effects, you can copy and paste this exact prompt into the AI:
 
-First, make sure you have [Node.js](https://nodejs.org/) installed on your machine.
+> "I need to update my 'Quantum Identity' portfolio (Next.js, Tailwind, React Three Fiber, Framer Motion). 
+> 
+> Please follow these strict rules to maintain the 'Glassmorphism 2.0' & Military-grade Tech aesthetic:
+> 1. **Do not touch `layout.tsx`, `NeuralNetworkBG.tsx`, or `globals.css` unless specifically asked.** The 3D background and Z-index architecture must remain exactly as is.
+> 2. Keep the color scheme locked to Amber (`#FF6B35`) and Cyan (`#0096FF`) with dark/glass backgrounds (`bg-white/5`, `bg-black/40`). Keep using the font constants `font-heading` (Syncopate) and `font-mono` (Space Grotesk).
+> 
+> **Here is what I need you to update today:**
+> *(Insert your changes here. Example: 'Add a new Data Scientist role at Microsoft to the Journey section and add a new AI Project to the Projects Section.')*
+>
+> Please edit the necessary TSX files (e.g., `JourneySection.tsx` or `ProjectsSection.tsx`) and provide the updated code."
 
-Clone the repository and install the dependencies:
+---
 
-```bash
-npm install
-# or
-yarn install
-# or
-pnpm install
-```
-
-Run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## 📁 Project Structure
-
-- `app/`: Next.js App Router core files (`layout.tsx`, `page.tsx`, `globals.css`).
-- `components/`: Reusable React components (UI elements, Layout, 3D Components).
-- `public/`: Static assets such as images and fonts.
-
-## 🎨 Features
-- Fully responsive design.
-- Immersive 3D animated backgrounds and objects.
-- Smooth page transitions and scroll animations.
-- Accessible and semantic UI components.
-- Dark mode optimized look with high contrast and sleek aesthetics.
-
-## 🌐 Deployment
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 3. Which Files Control Which Sections?
+If you ever want to change the text manually yourself, here is your cheat sheet:
+*   **Splash Screen Text**: `components/SentientSplashScreen.tsx` *(Lines starting with `const bootSequence = [`)*
+*   **Hero (Name, Roles, 3D Rings)**: `components/HeroSection.tsx` 
+*   **About Me (Bio, Location, Clearance)**: `components/AboutSection.tsx`
+*   **Skills Grid**: `components/SkillsSection.tsx`
+*   **Projects**: `components/ProjectsSection.tsx`
+*   **Experience & Certifications**: `components/JourneySection.tsx`
+*   **Contact Form & Social Links**: `components/ContactFooterSection.tsx`
